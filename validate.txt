@@ -1,0 +1,1 @@
+cp build/MyPlugin_artefacts/Debug/VST3/MyPlugin.vst3 ~/Library/Audio/Plug-Ins/VST3/

@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+1cb492fffa1ac406b5961b17cf1c91c5 MyPlugin_artefacts/JuceLibraryCode/JuceHeader.h
+5bb44696dc2a7746eb9bb95df020d173 MyPlugin_artefacts/JuceLibraryCode/MyPlugin_VST3/PkgInfo
