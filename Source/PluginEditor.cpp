@@ -2,32 +2,43 @@
 #include "PluginEditor.h"
 
 //==============================================================================
-MyPluginAudioProcessorEditor::MyPluginAudioProcessorEditor (MyPluginAudioProcessor& p)
-    : AudioProcessorEditor (&p), audioProcessor (p)
+MyPluginAudioProcessorEditor::MyPluginAudioProcessorEditor (MyPluginAudioProcessor& p)//Constructor
+    : AudioProcessorEditor (&p), audioProcessor (p),
+    keyboardComponent (keyboardState, juce::MidiKeyboardComponent::horizontalKeyboard)
+    
 {
-    // Make sure that before the constructor has finished, you've set the
-    // editor's size to whatever you need it to be.
-    setSize (400, 300);
+    
+setSize (1200, 800);
+addAndMakeVisible(myButton);
+addAndMakeVisible(keyboardComponent);  
+myButton.setButtonText("Close");  
+
 }
 
-MyPluginAudioProcessorEditor::~MyPluginAudioProcessorEditor()
+
+MyPluginAudioProcessorEditor::~MyPluginAudioProcessorEditor() //Destructor - closes UI
 {
 }
 
 //==============================================================================
-void MyPluginAudioProcessorEditor::paint (juce::Graphics& g)
+
+void MyPluginAudioProcessorEditor::paint (juce::Graphics& g) //text color - need to access graphics
 {
     // Fill the background with a dark color
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
+    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId)); // same color
 
-    // Draw the plugin name
-    g.setColour (juce::Colours::white);
-    g.setFont (15.0f);
-    g.drawFittedText ("UKG Plugin", getLocalBounds(), juce::Justification::centred, 1);
+    g.setColour (juce::Colours::white); //text color white
+    g.setFont (15.0f); //sets fonts
+    g.drawFittedText ("UKG Plugin", getLocalBounds(), juce::Justification::centred, 1); //position of text
 }
 
-void MyPluginAudioProcessorEditor::resized()
+void MyPluginAudioProcessorEditor::resized() // visual components btn knobs
 {
-    // This is generally where you'll want to lay out the positions of any
-    // subcomponents in your editor..
+    int keyboardHeight = 100;
+
+    keyboardComponent.setBounds(0, getHeight() - keyboardHeight, getWidth(), keyboardHeight);
+
+    myButton.setBounds(550, 200, 120, 40); 
+
+
 }

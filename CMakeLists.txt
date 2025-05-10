@@ -12,7 +12,7 @@ set(JUCE_DIR "/Users/jordan/Desktop/2025/JUCE")
 add_subdirectory(${JUCE_DIR} JUCE)
 
 juce_add_plugin(MyPlugin
-    COMPANY_NAME "revival records"
+    COMPANY_NAME "revivalrecords"
     IS_SYNTH FALSE
     NEEDS_MIDI_INPUT FALSE
     NEEDS_MIDI_OUTPUT FALSE
