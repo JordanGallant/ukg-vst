@@ -22,14 +22,13 @@ MyPluginAudioProcessorEditor::~MyPluginAudioProcessorEditor() //Destructor - clo
 
 //==============================================================================
 
-void MyPluginAudioProcessorEditor::paint (juce::Graphics& g) //text color - need to access graphics
+void MyPluginAudioProcessorEditor::paint (juce::Graphics& g)
 {
-    // Fill the background with a dark color
-    g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId)); // same color
+    g.fillAll(juce::Colour(30, 30, 30)); // Custom dark grey background
 
-    g.setColour (juce::Colours::white); //text color white
-    g.setFont (15.0f); //sets fonts
-    g.drawFittedText ("UKG Plugin", getLocalBounds(), juce::Justification::centred, 1); //position of text
+    g.setColour(juce::Colours::white);  // Text color
+    g.setFont(15.0f);
+    g.drawFittedText("UKG Plugin", getLocalBounds(), juce::Justification::centred, 1);
 }
 
 void MyPluginAudioProcessorEditor::resized() // visual components btn knobs
